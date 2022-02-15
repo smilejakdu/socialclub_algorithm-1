@@ -4,14 +4,16 @@ function solution(s) {
   string_list.forEach((element) => {
     let _string = "";
     for (let i = 0; i < string_list.length; i++) {
-      _string += element[i].toLowerCase()
-        ? (i + 1) % 2 == 0
-        : element[i].toUpperCase();
+      if ((i + 1) % 2 == 0) {
+        _string += element[i].toLowerCase();
+      } else {
+        _string += element[i].toUpperCase();
+      }
     }
     result.push(_string);
   });
 
-  return result;
+  return result.join(" ");
 }
 
 const s = "try hello world";
